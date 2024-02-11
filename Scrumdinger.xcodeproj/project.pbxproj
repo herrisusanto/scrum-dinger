@@ -17,6 +17,7 @@
 		0F83B0E72B78CE0C003158A6 /* TrailingIconLabelStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F83B0E62B78CE0C003158A6 /* TrailingIconLabelStyle.swift */; };
 		0F83B0E92B78CF9A003158A6 /* ScrumsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F83B0E82B78CF9A003158A6 /* ScrumsView.swift */; };
 		0F83B0EB2B78D4C6003158A6 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F83B0EA2B78D4C6003158A6 /* DetailView.swift */; };
+		0F83B0ED2B79118B003158A6 /* DetailEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F83B0EC2B79118B003158A6 /* DetailEditView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		0F83B0E62B78CE0C003158A6 /* TrailingIconLabelStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrailingIconLabelStyle.swift; sourceTree = "<group>"; };
 		0F83B0E82B78CF9A003158A6 /* ScrumsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrumsView.swift; sourceTree = "<group>"; };
 		0F83B0EA2B78D4C6003158A6 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		0F83B0EC2B79118B003158A6 /* DetailEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailEditView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 				0F83B0E62B78CE0C003158A6 /* TrailingIconLabelStyle.swift */,
 				0F83B0E82B78CF9A003158A6 /* ScrumsView.swift */,
 				0F83B0EA2B78D4C6003158A6 /* DetailView.swift */,
+				0F83B0EC2B79118B003158A6 /* DetailEditView.swift */,
 			);
 			path = Scrumdinger;
 			sourceTree = "<group>";
@@ -163,6 +166,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0F83B0ED2B79118B003158A6 /* DetailEditView.swift in Sources */,
 				0F83B0E32B78C20D003158A6 /* DailyScrum.swift in Sources */,
 				0F83B0EB2B78D4C6003158A6 /* DetailView.swift in Sources */,
 				0F83B0E72B78CE0C003158A6 /* TrailingIconLabelStyle.swift in Sources */,
