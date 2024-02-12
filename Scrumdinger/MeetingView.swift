@@ -8,43 +8,39 @@
 import SwiftUI
 
 struct MeetingView: View {
+    
+    @Binding var scrum: DailyScrum
+    @StateObject var scrumTimer = ScrumTimer()
+    
     var body: some View {
-        VStack {
-            ProgressView(value: 10, total: 15)
-            HStack {
-                VStack(alignment: .leading) {
-                    Text("Second Elapsed")
-                        .font(.caption)
-                    Label("300", systemImage: "hourglass.tophalf.fill")
-                }
+        ZStack {
+            RoundedRectangle(cornerRadius: 16)
+                .fill(scrum.theme.mainColor)
+            VStack {
+                MeetingHeaderView(secondElapsed: scrumTimer.secondsElapsed, secondRemaining: scrumTimer.secondsRemaining, theme: scrum.theme)
                 
-                Spacer()
+                Circle()
+                    .strokeBorder(lineWidth: 24)
                 
-                VStack(alignment: .leading) {
-                    Text("Seconds Remaining")
-                        .font(.caption)
-                    Label("600", systemImage: "hourglass.bottomhalf.fill")
-                }
+                MeetingFooterView(speakers: scrumTimer.speakers, skipAction: scrumTimer.skipSpeaker)
+                
+               
             }
-            .accessibilityElement(children: .ignore)
-            .accessibilityLabel("Time Remaining")
             
-            Circle()
-                .strokeBorder(lineWidth: 24)
-            
-            HStack {
-                Text("Speaker 1 of 3")
-                Spacer()
-                Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
-                    Image(systemName: "forward.fill")
-                })
-            }
-            .accessibilityLabel("Next speaker")
         }
         .padding()
+        .foregroundStyle(scrum.theme.accentColor)
+        .onAppear{
+            scrumTimer.reset(lengthInMinutes: scrum.lengthInMinutes, attendees: scrum.attendees)
+            scrumTimer.startScrum()
+        }
+        .onDisappear{
+            scrumTimer.stopScrum()
+        }
+        .navigationBarTitleDisplayMode(.inline)
     }
 }
 
 #Preview {
-    MeetingView()
+    MeetingView(scrum: .constant(DailyScrum.sampleData[0]))
 }
