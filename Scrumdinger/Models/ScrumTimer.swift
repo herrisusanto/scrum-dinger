@@ -146,3 +146,9 @@ extension Array<DailyScrum.Attendee> {
         }
     }
 }
+
+extension ScrumTimer {
+    static var speakers: [ScrumTimer.Speaker] {
+        [ScrumTimer.Speaker(name: "Bill", isCompleted: true), ScrumTimer.Speaker(name: "Cathy", isCompleted: false)]
+    }
+}
